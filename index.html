@@ -1,80 +1,217 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>werlyy_rblx | Мой путь</title>
+    <title>werlyy_rblx | Official Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #050505;
+            --accent-color: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
         body {
-            background-color: #0a0a0a;
-            color: #e5e5e5;
+            background-color: var(--bg-color);
+            color: #ffffff;
             font-family: 'Montserrat', sans-serif;
         }
         .accent-font {
             font-family: 'Playfair Display', serif;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
         }
         .avatar-glow {
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
         }
         .gradient-text {
-            background: linear-gradient(45deg, #fff, #888);
+            background: linear-gradient(to right, #fff, #999);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #fff;
+        }
+        .nav-link {
+            position: relative;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #fff;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #fff;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center py-12 px-6">
+<body class="min-h-screen">
 
-    <!-- Hero Section -->
-    <header class="text-center mb-16 animate-fade-in">
-        <div class="relative inline-block mb-6">
-            <img src="avatar.png" alt="werlyy_rblx avatar" class="w-32 h-32 rounded-full object-cover border-2 border-white/20 avatar-glow mx-auto">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center bg-gradient-to-b from-[#050505] to-transparent">
+        <div class="text-xl font-bold accent-font italic tracking-tighter">W.</div>
+        <div class="space-x-8 text-xs uppercase tracking-widest font-medium hidden md:flex">
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#stats" class="nav-link">Цифры</a>
+            <a href="#gallery" class="nav-link">Галерея</a>
+            <a href="#contact" class="nav-link">Связь</a>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold accent-font gradient-text mb-2">werlyy_rblx</h1>
-        <p class="text-white/50 tracking-widest uppercase text-sm">Content Creator & Dreamer</p>
+        <div>
+            <a href="https://t.me/werlyyrblx" class="text-[10px] border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all">TG CHANNEL</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="h-screen flex flex-col justify-center items-center text-center px-6">
+        <div class="mb-10 relative">
+            <div class="absolute inset-0 bg-white/5 blur-3xl rounded-full"></div>
+            <img src="avatar.png" alt="werlyy_rblx" class="w-40 h-40 rounded-full object-cover border border-white/10 avatar-glow relative z-10">
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold accent-font gradient-text mb-4">werlyy_rblx</h1>
+        <p class="text-white/40 tracking-[0.3em] uppercase text-xs mb-12">Digital Creator & Roblox Enthusiast</p>
+        <a href="#about" class="animate-bounce opacity-30">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7m14-8l-7 7-7-7"></path></svg>
+        </a>
     </header>
 
-    <!-- Content -->
-    <main class="max-w-2xl w-full space-y-12">
+    <main class="max-w-5xl mx-auto px-6 space-y-32 pb-32">
         
         <!-- About Section -->
-        <section class="glass p-8 rounded-2xl">
-            <h2 class="text-2xl font-bold mb-6 border-b border-white/10 pb-2 accent-font italic">Мой путь</h2>
-            <div class="space-y-4 text-white/80 leading-relaxed">
-                <p>
-                    Всё началось с простого любопытства и любви к виртуальным мирам. Roblox стал для меня не просто игрой, а местом, где я могу самовыражаться и делиться своим видением с тысячами людей.
-                </p>
-                <p>
-                    Мой путь — это история о том, как обычное хобби превращается в нечто большее. Через видео, через эстетику и через общение с вами я нахожу вдохновение каждый день. Это не всегда было легко, но каждый подписчик и каждый лайк давали мне силы двигаться дальше.
-                </p>
-                <p>
-                    Я верю, что каждый из нас может создать свой уникальный мир, если не будет бояться быть собой.
-                </p>
+        <section id="about" class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold accent-font italic section-title mb-10">Мой путь</h2>
+                <div class="space-y-6 text-white/60 leading-relaxed text-sm md:text-base">
+                    <p>
+                        Моя история в Roblox началась не просто как игра, а как поиск своего стиля. Я всегда чувствовала, что виртуальные миры — это идеальный холст для творчества.
+                    </p>
+                    <p>
+                        Каждое видео, которое я создаю, — это частичка моего настроения. Я ценю эстетику, внимание к деталям и искренность. Именно поэтому мой блог стал местом, где собираются люди, разделяющие мою любовь к прекрасному.
+                    </p>
+                    <p>
+                        Сегодня werlyy_rblx — это не просто никнейм, это сообщество. Мы вместе растем, вдохновляемся и создаем что-то новое каждый день.
+                    </p>
+                </div>
+            </div>
+            <div class="glass aspect-square rounded-3xl overflow-hidden flex items-center justify-center p-12">
+                <div class="text-center space-y-4">
+                    <div class="text-6xl font-bold accent-font italic opacity-10">CREATIVE</div>
+                    <div class="text-2xl font-light tracking-widest uppercase">Atmosphere</div>
+                    <div class="text-6xl font-bold accent-font italic opacity-10">VISION</div>
+                </div>
             </div>
         </section>
 
-        <!-- Socials Section -->
-        <section class="text-center">
-            <h3 class="text-xl font-semibold mb-6 accent-font">Присоединяйся к моей истории</h3>
-            <a href="https://t.me/werlyyrblx" target="_blank" class="inline-flex items-center px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.462 8.816l-1.591 7.499c-.12.532-.437.663-.883.412l-2.423-1.785-1.169 1.125c-.129.129-.238.238-.488.238l.174-2.469 4.493-4.058c.195-.174-.042-.27-.302-.097l-5.553 3.496-2.394-.748c-.52-.162-.53-.52.108-.77l9.354-3.605c.433-.162.812.097.629.897z"/></svg>
-                Telegram Канал
+        <!-- Stats Section -->
+        <section id="stats" class="py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center p-8 glass rounded-2xl">
+                    <div class="text-3xl font-bold mb-2">260+</div>
+                    <div class="text-[10px] text-white/40 uppercase tracking-widest">Подписчиков</div>
+                </div>
+                <div class="text-center p-8 glass rounded-2xl">
+                    <div class="text-3xl font-bold mb-2">180+</div>
+                    <div class="text-[10px] text-white/40 uppercase tracking-widest">Лайков</div>
+                </div>
+                <div class="text-center p-8 glass rounded-2xl">
+                    <div class="text-3xl font-bold mb-2">1K+</div>
+                    <div class="text-[10px] text-white/40 uppercase tracking-widest">Просмотров</div>
+                </div>
+                <div class="text-center p-8 glass rounded-2xl">
+                    <div class="text-3xl font-bold mb-2">Daily</div>
+                    <div class="text-[10px] text-white/40 uppercase tracking-widest">Контент</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section (Simulated) -->
+        <section id="gallery">
+            <h2 class="text-3xl font-bold accent-font italic section-title mb-12 text-center block mx-auto w-fit">Эстетика</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="aspect-[3/4] bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-all overflow-hidden relative group">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                         <span class="text-xs italic">Roblox Mood</span>
+                    </div>
+                </div>
+                <div class="aspect-[3/4] bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-all overflow-hidden relative group">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                         <span class="text-xs italic">Aesthetic Vibe</span>
+                    </div>
+                </div>
+                <div class="aspect-[3/4] bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-all overflow-hidden relative group">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                         <span class="text-xs italic">Dreamy World</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold accent-font italic mb-10 text-center">Частые вопросы</h2>
+            <div class="space-y-4">
+                <details class="glass p-6 rounded-xl group cursor-pointer">
+                    <summary class="list-none flex justify-between items-center font-medium text-sm">
+                        Где ты берешь идеи для видео?
+                        <span class="text-white/20 group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="mt-4 text-xs text-white/50 leading-relaxed">Вдохновение приходит из музыки, снов и других талантливых авторов в сообществе Roblox. Я стараюсь добавлять что-то свое в каждый тренд.</p>
+                </details>
+                <details class="glass p-6 rounded-xl group cursor-pointer">
+                    <summary class="list-none flex justify-between items-center font-medium text-sm">
+                        Как часто выходят посты?
+                        <span class="text-white/20 group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="mt-4 text-xs text-white/50 leading-relaxed">Я стараюсь радовать вас контентом каждый день, но качество для меня всегда на первом месте.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Contact/TG Section -->
+        <section id="contact" class="text-center py-20 border-t border-white/5">
+            <h3 class="text-4xl font-bold accent-font italic mb-8">Будь на связи</h3>
+            <p class="text-white/40 text-sm mb-12 max-w-md mx-auto">Подписывайся на мой Telegram канал, чтобы первыми узнавать о новых видео и просто общаться.</p>
+            <a href="https://t.me/werlyyrblx" target="_blank" class="inline-block px-12 py-5 bg-white text-black font-bold rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 tracking-widest text-xs">
+                JOIN TELEGRAM
             </a>
-            <p class="mt-4 text-white/30 text-xs">@werlyyrblx</p>
+            <div class="mt-16 text-[10px] text-white/20 uppercase tracking-[0.5em]">
+                @werlyyrblx
+            </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="mt-24 text-white/20 text-sm">
-        &copy; 2026 werlyy_rblx. Created with soul.
+    <footer class="py-12 text-center border-t border-white/5 text-[10px] text-white/20 tracking-widest uppercase">
+        &copy; 2026 werlyy_rblx. All Rights Reserved.
     </footer>
 
 </body>
